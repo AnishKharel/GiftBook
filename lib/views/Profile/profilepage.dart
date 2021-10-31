@@ -164,20 +164,30 @@ class Profilepage extends StatelessWidget {
                         Divider(),
                         ListTile(
                           title: Text("Friends List"),
-                          // subtitle: Text("MosallasDev@gmail.com"),
-                          // leading: Icon(Icons.email),
                         ),
                         ListTile(
-                          title: Text("Add"),
-                          // subtitle: Text(
-                          //     "We hope you find this channel useful.\nMosallas, is a group of 4 people who can do your projects well.\nAnd they will teach you their skills in this channel."),
-                          // leading: Icon(Icons.format_align_center),
+                          leading: Icon(Icons.person),
+                          title: Text("Stave Williams"),
+                          subtitle: Text("Birth date: Oct 14 "),
                         ),
                         ListTile(
-                          title: Text("Birth Date"),
-                          // subtitle: Text("25 September 2020"),
-                          leading: Icon(Icons.calendar_view_day),
+                          leading: Icon(Icons.person),
+                          title: Text("Anna Jone"),
+                          subtitle: Text("Birth date: Mar 17 "),
                         ),
+                        ListTile(
+                          leading: Icon(Icons.person),
+                          title: Text("Alex Smith"),
+                          subtitle: Text("Birth date: Feb 8 "),
+                          trailing: Icon(Icons.arrow_drop_down),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.add_box_outlined),
+                        ),
+                        // ListTile(
+                        //   title: Text("Birth Date"),
+                        //   leading: Icon(Icons.calendar_view_day),
+                        // ),
                       ],
                     ),
                   ),

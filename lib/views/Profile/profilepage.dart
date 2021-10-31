@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:hello_world/views/home/HomeView.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -16,7 +17,21 @@ class Profilepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile Page', style: TextStyle(color: Colors.black)),
+        actions: <Widget>[
+
+          IconButton(
+            onPressed: () => Navigator.push(
+            context,
+            new MaterialPageRoute(
+            builder: (context) => HomeView())),
+           icon:
+          const Icon(Icons.logout) ),
+          SizedBox(width: 50,),
+
+        ],
+        title: Text(username, style: TextStyle(color: Colors.black),
+        
+        ),
       ),
       body: SingleChildScrollView(
         child: Stack(
@@ -167,19 +182,31 @@ class Profilepage extends StatelessWidget {
                         ),
                         ListTile(
                           leading: Icon(Icons.person),
-                          title: Text("Stave Williams"),
+                          title: Text("Steve Williams"),
                           subtitle: Text("Birth date: Oct 14 "),
+                          onTap: () => Navigator.push(
+                           context,
+                            new MaterialPageRoute(
+                          builder: (context) => Profilepage("Steve Willaims"))),
                         ),
                         ListTile(
                           leading: Icon(Icons.person),
                           title: Text("Anna Jone"),
                           subtitle: Text("Birth date: Mar 17 "),
+                          onTap: () => Navigator.push(
+                           context,
+                            new MaterialPageRoute(
+                          builder: (context) => Profilepage("Anna Johnes"))),
                         ),
                         ListTile(
                           leading: Icon(Icons.person),
                           title: Text("Alex Smith"),
                           subtitle: Text("Birth date: Feb 8 "),
                           trailing: Icon(Icons.arrow_drop_down),
+                          onTap: () => Navigator.push(
+                           context,
+                            new MaterialPageRoute(
+                          builder: (context) => Profilepage("Alex Smith"))),
                         ),
                         ListTile(
                           leading: Icon(Icons.add_box_outlined),

@@ -1,8 +1,12 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+
+import 'package:hello_world/views/Profile/userinfo.dart';
+
 import 'package:hello_world/Widgets/Centered%20View/centeredView.dart';
 import 'package:mysql1/mysql1.dart';
+
 import 'package:hello_world/views/home/HomeView.dart';
 
 void main() {
@@ -14,25 +18,24 @@ void main() {
 
 class Profilepage extends StatelessWidget {
   final String username;
-  const Profilepage(this.username);
+  final userinfo user = new userinfo();
+  Profilepage(this.username);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[
-
           IconButton(
-            onPressed: () => Navigator.push(
-            context,
-            new MaterialPageRoute(
-            builder: (context) => HomeView())),
-           icon:
-          const Icon(Icons.logout) ),
-          SizedBox(width: 50,),
-
+              onPressed: () => Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => HomeView())),
+              icon: const Icon(Icons.logout)),
+          SizedBox(
+            width: 50,
+          ),
         ],
-        title: Text(username, style: TextStyle(color: Colors.black),
-        
+        title: Text(
+          username,
+          style: TextStyle(color: Colors.black),
         ),
       ),
       body: SingleChildScrollView(
@@ -84,18 +87,18 @@ class Profilepage extends StatelessWidget {
                             ),
                             Row(
                               children: <Widget>[
+                                 Icon(Icons.card_giftcard),
                                 Expanded(
                                   child: Column(
                                     children: <Widget>[
                                       // Text("Priority Gifts"),
-                                      SizedBox(
+                                     
+                                      Container( 
                                         height: 40,
-                                        child: TextField(
-                                          decoration: InputDecoration(
-                                              hintText: "Add Gift",
-                                              labelText: "First Priority Gifts",
-                                              icon: Icon(Icons.card_giftcard),
-                                              border: OutlineInputBorder()),
+
+                                        child: Text(user.getgift(),style: TextStyle(fontSize: 18),
+
+
                                         ),
                                       ),
                                     ],
@@ -104,17 +107,11 @@ class Profilepage extends StatelessWidget {
                                 Expanded(
                                   child: Column(
                                     children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.all(20.0),
-                                        child: SizedBox(
-                                          height: 40,
-                                          child: TextField(
-                                            decoration: InputDecoration(
-                                                hintText: "Add Gift",
-                                                labelText:
-                                                    "Second Priority Gifts",
-                                                border: OutlineInputBorder()),
-                                          ),
+                                      // Text("Priority Gifts"),
+                                     
+                                      Container( 
+                                        height: 40,
+                                        child: Text(user.getgift(),style: TextStyle(fontSize: 18),
                                         ),
                                       ),
                                     ],
@@ -123,18 +120,11 @@ class Profilepage extends StatelessWidget {
                                 Expanded(
                                   child: Column(
                                     children: <Widget>[
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 10),
-                                        child: SizedBox(
-                                          height: 40,
-                                          child: TextField(
-                                            decoration: InputDecoration(
-                                                hintText: "Add Gift",
-                                                labelText:
-                                                    "Third Priority Gifts",
-                                                border: OutlineInputBorder()),
-                                          ),
+                                      // Text("Priority Gifts"),
+                                     
+                                      Container( 
+                                        height: 40,
+                                        child: Text(user.getgift(),style: TextStyle(fontSize: 18),
                                         ),
                                       ),
                                     ],
@@ -196,18 +186,20 @@ class Profilepage extends StatelessWidget {
                           title: Text("Steve Williams"),
                           subtitle: Text("Birth date: Oct 14 "),
                           onTap: () => Navigator.push(
-                           context,
-                            new MaterialPageRoute(
-                          builder: (context) => Profilepage("Steve Willaims"))),
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) =>
+                                      Profilepage("Steve Willaims"))),
                         ),
                         ListTile(
                           leading: Icon(Icons.person),
                           title: Text("Anna Jones"),
                           subtitle: Text("Birth date: Mar 17 "),
                           onTap: () => Navigator.push(
-                           context,
-                            new MaterialPageRoute(
-                          builder: (context) => Profilepage("Anna Johnes"))),
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) =>
+                                      Profilepage("Anna Johnes"))),
                         ),
                         ListTile(
                           leading: Icon(Icons.person),
@@ -216,9 +208,12 @@ class Profilepage extends StatelessWidget {
 
                           trailing: Icon(Icons.arrow_drop_down),
                           onTap: () => Navigator.push(
-                           context,
-                            new MaterialPageRoute(
-                          builder: (context) => Profilepage("Alex Smith"))),main
+
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) =>
+                                      Profilepage("Alex Smith"))),
+
                         ),
                         ListTile(
                           leading: Icon(Icons.arrow_drop_down),

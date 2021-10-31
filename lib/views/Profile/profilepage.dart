@@ -87,18 +87,24 @@ class Profilepage extends StatelessWidget {
                             ),
                             Row(
                               children: <Widget>[
-                                 Icon(Icons.card_giftcard),
+                                Icon(
+                                  Icons.card_giftcard,
+                                  size: 40,
+                                ),
+                                Text("Preferred Gifts",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18)),
                                 Expanded(
                                   child: Column(
                                     children: <Widget>[
                                       // Text("Priority Gifts"),
-                                     
-                                      Container( 
+
+                                      Container(
                                         height: 40,
-
-                                        child: Text(user.getgift(),style: TextStyle(fontSize: 18),
-
-
+                                        child: Text(
+                                          user.getgift(),
+                                          style: TextStyle(fontSize: 18),
                                         ),
                                       ),
                                     ],
@@ -108,10 +114,12 @@ class Profilepage extends StatelessWidget {
                                   child: Column(
                                     children: <Widget>[
                                       // Text("Priority Gifts"),
-                                     
-                                      Container( 
+
+                                      Container(
                                         height: 40,
-                                        child: Text(user.getgift(),style: TextStyle(fontSize: 18),
+                                        child: Text(
+                                          user.getgift(),
+                                          style: TextStyle(fontSize: 18),
                                         ),
                                       ),
                                     ],
@@ -121,10 +129,12 @@ class Profilepage extends StatelessWidget {
                                   child: Column(
                                     children: <Widget>[
                                       // Text("Priority Gifts"),
-                                     
-                                      Container( 
+
+                                      Container(
                                         height: 40,
-                                        child: Text(user.getgift(),style: TextStyle(fontSize: 18),
+                                        child: Text(
+                                          user.getgift(),
+                                          style: TextStyle(fontSize: 18),
                                         ),
                                       ),
                                     ],
@@ -177,9 +187,21 @@ class Profilepage extends StatelessWidget {
                           )),
                         ),
                         Divider(),
-                        ListTile(
-                          title: Text("Friends List",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 50,
+                            ),
+                            Text("Friends List",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16)),
+                            SizedBox(
+                              width: 400,
+                            ),
+                            Text("Holidays",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16)),
+                          ],
                         ),
                         ListTile(
                           leading: Icon(Icons.person),
@@ -205,15 +227,11 @@ class Profilepage extends StatelessWidget {
                           leading: Icon(Icons.person),
                           title: Text("Alex Smith"),
                           subtitle: Text("Birth date: Feb 8 "),
-
-                          trailing: Icon(Icons.arrow_drop_down),
                           onTap: () => Navigator.push(
-
                               context,
                               new MaterialPageRoute(
                                   builder: (context) =>
                                       Profilepage("Alex Smith"))),
-
                         ),
                         ListTile(
                           leading: Icon(Icons.arrow_drop_down),

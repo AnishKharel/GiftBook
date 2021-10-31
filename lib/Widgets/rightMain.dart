@@ -68,10 +68,21 @@ class rightMain extends State<rightMainstate> {
             padding: EdgeInsets.symmetric(horizontal: 25),
             child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
+                   Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => loaderscreen(username:myController.text)));
+                  Future.delayed(const Duration(milliseconds: 500), () {
+                   setState(() { 
+                      Navigator.push(
                       context,
                       new MaterialPageRoute(
                           builder: (context) => Profilepage(myController.text)));
+
+              });
+
+                });
+
                 },
                 child: Text(
                   "Login",

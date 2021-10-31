@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:hello_world/Widgets/Centered%20View/centeredView.dart';
+import 'package:mysql1/mysql1.dart';
 import 'package:hello_world/views/home/HomeView.dart';
 
 void main() {
@@ -69,7 +71,10 @@ class Profilepage extends StatelessWidget {
                                 children: <Widget>[
                                   ListTile(
                                     contentPadding: EdgeInsets.all(0),
-                                    title: Text(username),
+                                    title: Text(username,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 30)),
                                   ),
                                 ],
                               ),
@@ -88,7 +93,7 @@ class Profilepage extends StatelessWidget {
                                         child: TextField(
                                           decoration: InputDecoration(
                                               hintText: "Add Gift",
-                                              labelText: "Priority Gifts",
+                                              labelText: "First Priority Gifts",
                                               icon: Icon(Icons.card_giftcard),
                                               border: OutlineInputBorder()),
                                         ),
@@ -173,12 +178,18 @@ class Profilepage extends StatelessWidget {
                     ),
                     child: Column(
                       children: <Widget>[
-                        ListTile(
-                          title: Text("More Information"),
+                        new ListTile(
+                          title: new Center(
+                              child: Text(
+                            "More Information",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          )),
                         ),
                         Divider(),
                         ListTile(
-                          title: Text("Friends List"),
+                          title: Text("Friends List",
+                              style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                         ListTile(
                           leading: Icon(Icons.person),
@@ -191,7 +202,7 @@ class Profilepage extends StatelessWidget {
                         ),
                         ListTile(
                           leading: Icon(Icons.person),
-                          title: Text("Anna Jone"),
+                          title: Text("Anna Jones"),
                           subtitle: Text("Birth date: Mar 17 "),
                           onTap: () => Navigator.push(
                            context,
@@ -202,19 +213,16 @@ class Profilepage extends StatelessWidget {
                           leading: Icon(Icons.person),
                           title: Text("Alex Smith"),
                           subtitle: Text("Birth date: Feb 8 "),
+
                           trailing: Icon(Icons.arrow_drop_down),
                           onTap: () => Navigator.push(
                            context,
                             new MaterialPageRoute(
-                          builder: (context) => Profilepage("Alex Smith"))),
+                          builder: (context) => Profilepage("Alex Smith"))),main
                         ),
                         ListTile(
-                          leading: Icon(Icons.add_box_outlined),
+                          leading: Icon(Icons.arrow_drop_down),
                         ),
-                        // ListTile(
-                        //   title: Text("Birth Date"),
-                        //   leading: Icon(Icons.calendar_view_day),
-                        // ),
                       ],
                     ),
                   ),

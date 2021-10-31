@@ -86,7 +86,6 @@ class Profilepage extends StatelessWidget {
                                       // Text("Priority Gifts"),
                                      
                                       Container( 
-                                        decoration: BoxDecoration(border: ),
                                         height: 40,
                                         child: Text(user.getgift(),style: TextStyle(fontSize: 18),
                                         ),
@@ -97,18 +96,11 @@ class Profilepage extends StatelessWidget {
                                 Expanded(
                                   child: Column(
                                     children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.all(20.0),
-                                        child: SizedBox(
-                                          height: 40,
-                                          child: TextField(
-                                            
-                                            decoration: InputDecoration(
-                                                hintText: "Add Gift",
-                                                labelText:
-                                                    "Second Priority Gifts",
-                                                border: OutlineInputBorder()),
-                                          ),
+                                      // Text("Priority Gifts"),
+                                     
+                                      Container( 
+                                        height: 40,
+                                        child: Text(user.getgift(),style: TextStyle(fontSize: 18),
                                         ),
                                       ),
                                     ],
@@ -117,18 +109,11 @@ class Profilepage extends StatelessWidget {
                                 Expanded(
                                   child: Column(
                                     children: <Widget>[
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 10),
-                                        child: SizedBox(
-                                          height: 40,
-                                          child: TextField(
-                                            decoration: InputDecoration(
-                                                hintText: "Add Gift",
-                                                labelText:
-                                                    "Third Priority Gifts",
-                                                border: OutlineInputBorder()),
-                                          ),
+                                      // Text("Priority Gifts"),
+                                     
+                                      Container( 
+                                        height: 40,
+                                        child: Text(user.getgift(),style: TextStyle(fontSize: 18),
                                         ),
                                       ),
                                     ],

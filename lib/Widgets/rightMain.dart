@@ -1,9 +1,10 @@
 import 'dart:async';
+import 'package:hello_world/views/Profile/profilepage.dart';
 import 'package:mysql1/mysql1.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_world/views/loadingpage.dart';
-
+import 'package:hello_world/views/Profile/profilepage.dart';
 
 class rightMainstate extends StatefulWidget {
   @override
@@ -39,14 +40,14 @@ class rightMain extends State<rightMainstate> {
           SizedBox(
             height: 20,
           ),
-           Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
             child: TextField(
-              controller: myController,
+                controller: myController,
                 decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "Enter Username",
-            )),
+                  border: OutlineInputBorder(),
+                  hintText: "Enter Username",
+                )),
           ),
           SizedBox(
             height: 20,
@@ -70,7 +71,7 @@ class rightMain extends State<rightMainstate> {
                   Navigator.push(
                       context,
                       new MaterialPageRoute(
-                          builder: (context) => new loaderscreen(username: myController.text,)));
+                          builder: (context) => Profilepage()));
                 },
                 child: Text(
                   "Login",

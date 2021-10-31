@@ -4,12 +4,14 @@ import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Profilepage(),
+    home: Profilepage("Anish Kharel"),
     theme: ThemeData(primaryColor: Colors.blue[100]),
   ));
 }
 
 class Profilepage extends StatelessWidget {
+  final String username;
+  const Profilepage(this.username);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +54,7 @@ class Profilepage extends StatelessWidget {
                                 children: <Widget>[
                                   ListTile(
                                     contentPadding: EdgeInsets.all(0),
-                                    title: Text("User Name"),
+                                    title: Text(username),
                                   ),
                                 ],
                               ),
